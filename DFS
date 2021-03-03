@@ -1,0 +1,36 @@
+DFS mane hocce depth first search...eikhane ekta node e jokhn dfs korbo tokhn oi node er sathe ja ja connect ace ta visited hobe.and abar oi node gular sathe ja ja connect ace ta 
+o visited hobe jodi unvisited thake..mane amra ekta graph er ekta node e jodi amra dfs calai tahole oi node er sathe connected joto node ace shob gula e visited hobe .er jonno e
+depth..mane amra main jei node e dfs calabo oita hocce gacer mul.tar sathe connected ja ja node ace shob ti hocce tar saka prosakha..jei jaigai giye amra dekhbo ar kono node e 
+jawa possible na tokhn amra jei poth dhore ei node e asci abar ei poth dhore mul e chole asbo..
+//winners never quit//
+//never give up//
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define fast() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+const int mx=1e5+123;
+bool vis[mx];
+vector<int>adj[mx];
+void dfs(int u){
+	vis[u]=1;
+	for(auto v: adj[u]){
+		if(!vis[v]) dfs(v);
+	}
+	return;
+}
+void solve()
+{
+       int n,m; cin>>n>>m;
+       for(int i=1 ; i<=m ; i++){
+       	int u,v; cin>>u>>v;
+       	adj[u].push_back(v);
+       	adj[v].push_back(u);
+       }
+       dfs(1);//amra 1 number node theke dfs calaici
+}
+int main()
+{
+	fast();
+	solve();
+}
+//Author:_mehedi_
